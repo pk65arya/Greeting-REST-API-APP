@@ -31,7 +31,7 @@ public class GreetingServiceImpl implements GreetingService{
     public List<Greeting> getAllGreeting(){
         return greetingRepository.findAll();
     }
-//UC5 git 
+//UC5 git
     @Override
     public Greeting editGreetingById(long id, String name) {
         Greeting greeting = greetingRepository.findById(id).get();
