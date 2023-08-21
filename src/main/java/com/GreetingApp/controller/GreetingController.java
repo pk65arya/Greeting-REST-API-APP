@@ -31,10 +31,13 @@ private static final String template ="Hello, %s!";
     public List<Greeting> getAll(){
         return greetingService.getAllGreeting();
     }
+<<<<<<< HEAD
     @PutMapping("/edit/{id}")
     public Greeting editGreetingById(@PathVariable long id, @RequestParam String name){
         return greetingService.editGreetingById(id, name);
     }
+=======
+>>>>>>> a6e766b55a0858dd9ad2ff12756d8d46d88e0052
 }
 
 

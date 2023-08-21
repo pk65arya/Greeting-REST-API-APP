@@ -31,6 +31,7 @@ public class GreetingServiceImpl implements GreetingService{
     public List<Greeting> getAllGreeting(){
         return greetingRepository.findAll();
     }
+<<<<<<< HEAD
 //UC5 git
     @Override
     public Greeting editGreetingById(long id, String name) {
@@ -39,4 +40,6 @@ public class GreetingServiceImpl implements GreetingService{
         greetingRepository.save(greeting);
         return greeting;
     }
+=======
+>>>>>>> a6e766b55a0858dd9ad2ff12756d8d46d88e0052
 }
