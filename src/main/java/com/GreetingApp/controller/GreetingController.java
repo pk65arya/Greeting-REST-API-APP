@@ -4,11 +4,9 @@ import com.GreetingApp.entity.Greeting;
 import com.GreetingApp.entity.User;
 import com.GreetingApp.service.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
@@ -24,6 +22,18 @@ private static final String template ="Hello, %s!";
         User user = new User();
         user.setFirstName(name);
         return greetingService.addGreeting(user);
+    }
+    @GetMapping("/path/{id}")
+    public Greeting getElementById(@PathVariable Long id) {
+        return greetingService.getGreetingById(id);
+    }
+    @GetMapping("/getAll")
+    public List<Greeting> getAll(){
+        return greetingService.getAllGreeting();
+    }
+    @PutMapping("/edit/{id}")
+    public Greeting editGreetingById(@PathVariable long id, @RequestParam String name){
+        return greetingService.editGreetingById(id, name);
     }
 }
 
